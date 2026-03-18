@@ -1,6 +1,6 @@
 # VaultBeacon Sentinel
 
-- **Repo:** TODO_GITHUB_URL/Synthesis-Lido-VaultMonitor
+- **Repo:** https://github.com/CrystallineButterfly/Synthesis-Lido-VaultMonitor
 - **Primary track:** Lido Vault Position Monitor + Alert Agent
 - **Overlap targets:** Venice Private Agents, ENS, Bankr Gateway, Filecoin, OpenServ
 - **Primary contract:** VaultAlertRegistry
