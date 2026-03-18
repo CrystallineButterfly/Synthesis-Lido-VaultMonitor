@@ -1,15 +1,25 @@
 # VaultBeacon Sentinel
 
-- **Repo:** `Synthesis-Lido-VaultMonitor`
+- **Repo:** [Synthesis-Lido-VaultMonitor](https://github.com/CrystallineButterfly/Synthesis-Lido-VaultMonitor)
 - **Primary track:** Lido Vault Position Monitor + Alert Agent
 - **Category:** monitoring
+- **Primary contract:** `VaultAlertRegistry`
+- **Primary module:** `vault_monitor`
 - **Submission status:** implementation ready, waiting for credentials and TxIDs.
+
+## What this repo does
 
 A monitoring agent that tracks vault allocations, benchmark yield shifts, and operator thresholds, then emits plain-language alerts and MCP-callable responses.
 
-## Selected concept
+## Why this build matters
 
 A monitoring agent pulls vault allocations, benchmark feeds, and risk thresholds into a plain-language alert stream. The contract layer only stores alert commitments and severity receipts so operators can prove alerts were generated before any downstream change is proposed.
+
+## Submission fit
+
+- **Primary track:** Lido Vault Position Monitor + Alert Agent
+- **Overlap targets:** Venice Private Agents, ENS, Bankr Gateway, Filecoin, OpenServ
+- **Partners covered:** Lido Vault Monitor, Venice, ENS, Bankr Gateway, Filecoin, OpenServ
 
 ## Idea shortlist
 
@@ -17,11 +27,7 @@ A monitoring agent pulls vault allocations, benchmark feeds, and risk thresholds
 2. Private Risk Alert Desk
 3. MCP-Callable Vault Copilot
 
-## Partners covered
-
-Lido Vault Monitor, Venice, ENS, Bankr Gateway, Filecoin, OpenServ
-
-## Architecture
+## System graph
 
 ```mermaid
 flowchart TD
@@ -39,14 +45,36 @@ flowchart TD
     Contract --> openserv[OpenServ]
 ```
 
-## Repository layout
+## Repository contents
 
-- `src/`: shared policy contracts plus the repo-specific wrapper contract.
-- `script/`: Foundry deployment entrypoint.
-- `agents/`: Python runtime, partner adapters, and project metadata.
-- `scripts/`: CLI utilities for running the loop and rendering submissions.
-- `docs/`: architecture, credentials, demo script, and security notes.
-- `submissions/`: generated `synthesis.md` snippet for this repo.
+| Path | What it contains |
+| --- | --- |
+| `src/` | Shared policy contracts plus the repo-specific wrapper contract. |
+| `script/Deploy.s.sol` | Foundry deployment entrypoint for the policy contract. |
+| `agents/` | Python runtime, project spec, env handling, and partner adapters. |
+| `scripts/` | Terminal entrypoints for run, demo planning, and submission rendering. |
+| `docs/` | Architecture, credentials, security notes, and demo steps. |
+| `submissions/` | Generated `synthesis.md` snippet for this repo. |
+| `test/` | Foundry tests for the Solidity control layer. |
+| `tests/` | Python tests for runtime and project context. |
+| `agent.json` | Submission-facing agent manifest. |
+| `agent_log.json` | Local execution log and status trail. |
+
+## Autonomy loop
+
+1. Discover signals relevant to the repo track and its overlap targets.
+2. Build a bounded plan with per-action and compute caps.
+3. Persist a dry-run artifact before any live execution.
+4. Enforce onchain policy through the guarded contract wrapper.
+5. Verify outputs, update receipts, and render submission material.
+
+## Security controls
+
+- Admin-managed allowlists for targets and selectors.
+- Per-action caps, daily caps, cooldown windows, and a principal floor.
+- Reporter-only receipt anchoring and proof attachment.
+- Env-only secrets; no committed private keys or partner tokens.
+- Pause switch plus dry-run-first execution flow.
 
 ## Action catalog
 
@@ -58,6 +86,18 @@ flowchart TD
 | `bankr_gateway_compute_route` | Bankr Gateway | Use Bankr Gateway for a bounded action in this repo. | $10 | high |
 | `filecoin_proof_store` | Filecoin | Use Filecoin for a bounded action in this repo. | $20 | medium |
 | `openserv_job_dispatch` | OpenServ | Use OpenServ for a bounded action in this repo. | $10 | medium |
+
+## Local terminal flow (Anvil + Sepolia)
+
+```bash
+export SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_KEY
+anvil --fork-url "$SEPOLIA_RPC_URL" --chain-id 11155111
+cp .env.example .env
+# keep private keys only in .env; TODO.md stays local-only too
+forge script script/Deploy.s.sol --rpc-url "$RPC_URL" --broadcast
+python3 scripts/run_agent.py
+python3 scripts/render_submission.py
+```
 
 ## Commands
 
