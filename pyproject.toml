@@ -1,9 +1,13 @@
+
 [project]
 name = "synthesis_lido_vaultmonitor"
 version = "0.1.0"
 description = "A monitoring agent that tracks vault allocations, benchmark yield shifts, and operator thresholds, then emits plain-language alerts and MCP-callable responses."
 readme = "README.md"
 requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100

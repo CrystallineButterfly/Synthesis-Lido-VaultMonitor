@@ -1,26 +1,153 @@
-"""Project-specific context module."""
+"""Project-specific metadata for the local runtime."""
 
-from __future__ import annotations
+from agents.models import ProjectSpec
 
-PROJECT_CONTEXT = {
-  "project_name": "VaultBeacon Sentinel",
-  "track": "Lido Vault Position Monitor + Alert Agent",
-  "pitch": "A monitoring agent that tracks vault allocations, benchmark yield shifts, and operator thresholds, then emits plain-language alerts and MCP-callable responses.",
-  "overlap_targets": [
-    "Venice Private Agents",
-    "ENS",
-    "Bankr Gateway",
-    "Filecoin",
-    "OpenServ"
-  ],
-  "goals": [
-    "discover a bounded opportunity",
-    "plan a dry-run-first action",
-    "verify receipts and proofs"
-  ]
-}
+PROJECT_CONTEXT = {'repo_name': 'Synthesis-Lido-VaultMonitor',
+ 'project_name': 'VaultBeacon Sentinel',
+ 'track': 'Lido Vault Position Monitor + Alert Agent',
+ 'pitch': 'A monitoring agent that tracks vault allocations, benchmark yield shifts, '
+          'and operator thresholds, then emits plain-language alerts and MCP-callable '
+          'responses.',
+ 'idea_titles': ['Earn Vault Yield Comparator',
+                 'Private Risk Alert Desk',
+                 'MCP-Callable Vault Copilot'],
+ 'architecture_summary': 'A monitoring agent pulls vault allocations, benchmark feeds, '
+                         'and risk thresholds into a plain-language alert stream. The '
+                         'contract layer only stores alert commitments and severity '
+                         'receipts so operators can prove alerts were generated before '
+                         'any downstream change is proposed.',
+ 'overlap_targets': ['Venice Private Agents',
+                     'ENS',
+                     'Bankr Gateway',
+                     'Filecoin',
+                     'OpenServ'],
+ 'primary_contract_name': 'VaultAlertRegistry',
+ 'primary_python_module': 'vault_monitor',
+ 'category': 'monitoring',
+ 'daily_budget_usd': 102,
+ 'per_action_budget_usd': 25,
+ 'cooldown_seconds': 900,
+ 'discovery_inputs': [{'name': 'vault_state',
+                       'description': 'Current allocations, balances, and thresholds.'},
+                      {'name': 'benchmarks',
+                       'description': 'External yield references and comparison '
+                                      'snapshots.'},
+                      {'name': 'alert_policy',
+                       'description': 'Severity thresholds, recipients, and cooldown '
+                                      'rules.'},
+                      {'name': 'receipts',
+                       'description': 'Alert digests and submission notes.'}],
+ 'live_demo_steps': ['Copy .env.example to .env and fill the required keys.',
+                     'Deploy the contract with forge script script/Deploy.s.sol '
+                     '--broadcast for VaultAlertRegistry.',
+                     'Run python3 scripts/run_agent.py to produce a dry run for '
+                     'vault_monitor.',
+                     'Set LIVE_MODE=true and rerun python3 scripts/run_agent.py with '
+                     'real credentials.',
+                     'Run python3 scripts/render_submission.py and attach TxIDs plus '
+                     'repo links.'],
+ 'partners': [{'name': 'Lido Vault Monitor',
+               'docs_url': 'https://docs.lido.fi/',
+               'env_vars': ['RPC_URL'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Monitor vault state and anchor alert digests.'},
+              {'name': 'Venice',
+               'docs_url': 'https://docs.venice.ai/',
+               'env_vars': ['VENICE_API_KEY',
+                            'VENICE_CHAT_COMPLETIONS_URL',
+                            'VENICE_MODEL'],
+               'endpoint_env': 'VENICE_CHAT_COMPLETIONS_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Run private reasoning over sensitive inputs.'},
+              {'name': 'ENS',
+               'docs_url': 'https://docs.ens.domains/',
+               'env_vars': ['ENS_NAME'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Publish human-readable coordination and identity receipts.'},
+              {'name': 'Bankr Gateway',
+               'docs_url': 'https://bankr.bot/',
+               'env_vars': ['BANKR_API_KEY',
+                            'BANKR_CHAT_COMPLETIONS_URL',
+                            'BANKR_MODEL'],
+               'endpoint_env': 'BANKR_CHAT_COMPLETIONS_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Route inference through cost-aware model selection.'},
+              {'name': 'Filecoin',
+               'docs_url': 'https://docs.filecoin.cloud/',
+               'env_vars': ['FILECOIN_API_TOKEN', 'FILECOIN_UPLOAD_URL'],
+               'endpoint_env': 'FILECOIN_UPLOAD_URL',
+               'action_kind': 'file_upload',
+               'purpose': 'Persist proofs, logs, and evidence bundles offchain.'},
+              {'name': 'OpenServ',
+               'docs_url': 'https://docs.openserv.ai/',
+               'env_vars': ['OPENSERV_API_KEY', 'OPENSERV_AGENT_URL'],
+               'endpoint_env': 'OPENSERV_AGENT_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Dispatch jobs and expose swarm service endpoints.'}],
+ 'actions': [{'id': 'lido_vault_monitor_vault_alert',
+              'target': 'lido_vault_monitor',
+              'purpose': 'Use Lido Vault Monitor for a bounded action in this repo.',
+              'partner': 'Lido Vault Monitor',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 1,
+              'priority': 100,
+              'sensitivity': 'medium',
+              'notes': ['Call Lido Vault Monitor only after a dry-run artifact exists.',
+                        'Use https://docs.lido.fi/ for credential setup.']},
+             {'id': 'venice_private_analysis',
+              'target': 'venice',
+              'purpose': 'Use Venice for a bounded action in this repo.',
+              'partner': 'Venice',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 5,
+              'priority': 95,
+              'sensitivity': 'high',
+              'notes': ['Call Venice only after a dry-run artifact exists.',
+                        'Use https://docs.venice.ai/ for credential setup.']},
+             {'id': 'ens_ens_publish',
+              'target': 'ens',
+              'purpose': 'Use ENS for a bounded action in this repo.',
+              'partner': 'ENS',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 5,
+              'priority': 90,
+              'sensitivity': 'low',
+              'notes': ['Call ENS only after a dry-run artifact exists.',
+                        'Use https://docs.ens.domains/ for credential setup.']},
+             {'id': 'bankr_gateway_compute_route',
+              'target': 'bankr_gateway',
+              'purpose': 'Use Bankr Gateway for a bounded action in this repo.',
+              'partner': 'Bankr Gateway',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 10,
+              'priority': 85,
+              'sensitivity': 'high',
+              'notes': ['Call Bankr Gateway only after a dry-run artifact exists.',
+                        'Use https://bankr.bot/ for credential setup.']},
+             {'id': 'filecoin_proof_store',
+              'target': 'filecoin',
+              'purpose': 'Use Filecoin for a bounded action in this repo.',
+              'partner': 'Filecoin',
+              'action_kind': 'file_upload',
+              'max_amount_usd': 20,
+              'priority': 80,
+              'sensitivity': 'medium',
+              'notes': ['Call Filecoin only after a dry-run artifact exists.',
+                        'Use https://docs.filecoin.cloud/ for credential setup.']},
+             {'id': 'openserv_job_dispatch',
+              'target': 'openserv',
+              'purpose': 'Use OpenServ for a bounded action in this repo.',
+              'partner': 'OpenServ',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 10,
+              'priority': 75,
+              'sensitivity': 'medium',
+              'notes': ['Call OpenServ only after a dry-run artifact exists.',
+                        'Use https://docs.openserv.ai/ for credential setup.']}]}
 
 
-def seed_targets() -> list[str]:
-    """Return the first batch of overlap targets for planning."""
-    return list(PROJECT_CONTEXT['overlap_targets'])
+def build_project_spec() -> ProjectSpec:
+    """Return the repository-specific project metadata."""
+    return ProjectSpec.from_dict(PROJECT_CONTEXT)
