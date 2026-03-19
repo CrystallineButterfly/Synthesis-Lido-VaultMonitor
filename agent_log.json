@@ -7,5 +7,575 @@
     "details": {
       "status": "ready_for_credentials"
     }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "vault_state",
+          "description": "Current allocations, balances, and thresholds.",
+          "score": 95
+        },
+        {
+          "name": "benchmarks",
+          "description": "External yield references and comparison snapshots.",
+          "score": 90
+        },
+        {
+          "name": "alert_policy",
+          "description": "Severity thresholds, recipients, and cooldown rules.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Alert digests and submission notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0xf7a63d5caace8e5bd4122f52d53eb53cb34b2cf7af7cccdb1e7719c7eb9cf364"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x674b9c11b0ed373d85c7bb0f4add98ebadfd8f4efabe9a0ca6717ce64c851abd"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "ENS_NAME",
+        "FILECOIN_API_TOKEN",
+        "FILECOIN_UPLOAD_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "RPC_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "VaultBeacon Sentinel",
+      "track": "Lido Vault Position Monitor + Alert Agent",
+      "plan_id": "0xf7a63d5caace8e5bd4122f52d53eb53cb34b2cf7af7cccdb1e7719c7eb9cf364",
+      "simulation_hash": "0x674b9c11b0ed373d85c7bb0f4add98ebadfd8f4efabe9a0ca6717ce64c851abd",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:10+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "vault_state",
+          "description": "Current allocations, balances, and thresholds.",
+          "score": 95
+        },
+        {
+          "name": "benchmarks",
+          "description": "External yield references and comparison snapshots.",
+          "score": 90
+        },
+        {
+          "name": "alert_policy",
+          "description": "Severity thresholds, recipients, and cooldown rules.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Alert digests and submission notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0xf7a63d5caace8e5bd4122f52d53eb53cb34b2cf7af7cccdb1e7719c7eb9cf364"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x674b9c11b0ed373d85c7bb0f4add98ebadfd8f4efabe9a0ca6717ce64c851abd"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "ENS_NAME",
+        "FILECOIN_API_TOKEN",
+        "FILECOIN_UPLOAD_URL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "RPC_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:10+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "VaultBeacon Sentinel",
+      "track": "Lido Vault Position Monitor + Alert Agent",
+      "plan_id": "0xf7a63d5caace8e5bd4122f52d53eb53cb34b2cf7af7cccdb1e7719c7eb9cf364",
+      "simulation_hash": "0x674b9c11b0ed373d85c7bb0f4add98ebadfd8f4efabe9a0ca6717ce64c851abd",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:10+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:39:23.678178+00:00",
+    "stage": "security_review",
+    "actor": "audit_pass",
+    "message": "Completed the shared hardening and offline-artifact audit pass.",
+    "details": {
+      "status": "audited_ready_pending_live_credentials",
+      "primary_contract": "VaultAlertRegistry.sol"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:53+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "vault_state",
+          "description": "Current allocations, balances, and thresholds.",
+          "score": 95
+        },
+        {
+          "name": "benchmarks",
+          "description": "External yield references and comparison snapshots.",
+          "score": 90
+        },
+        {
+          "name": "alert_policy",
+          "description": "Severity thresholds, recipients, and cooldown rules.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Alert digests and submission notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:53+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xad52b0be4c5a59b14eb2d61008b31bb2d82c9199de68068ce5594874129950cf",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:53+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x6a81c162805ca13ef832637492f2a3e4edde5a1740a167df96c7d05cc3eedb6f"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:53+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:53+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "VaultBeacon Sentinel",
+      "track": "Lido Vault Position Monitor + Alert Agent",
+      "plan_id": "0xad52b0be4c5a59b14eb2d61008b31bb2d82c9199de68068ce5594874129950cf",
+      "simulation_hash": "0x6a81c162805ca13ef832637492f2a3e4edde5a1740a167df96c7d05cc3eedb6f",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_vault_monitor_vault_alert.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/filecoin/0xad52b0be4c5a59b14eb2d61008b31bb2d82c9199de68068ce5594874129950cf.json"
+      ],
+      "partner_statuses": {
+        "Lido Vault Monitor": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "OpenServ": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:48:53+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:43+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "vault_state",
+          "description": "Current allocations, balances, and thresholds.",
+          "score": 95
+        },
+        {
+          "name": "benchmarks",
+          "description": "External yield references and comparison snapshots.",
+          "score": 90
+        },
+        {
+          "name": "alert_policy",
+          "description": "Severity thresholds, recipients, and cooldown rules.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Alert digests and submission notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:43+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xabc0a144538821da775d58358d85062178997549050650a62ef7e33e34214a79",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:43+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xb03305bbd2304abbd96d17ef6b4d1836d855c28d9e4306b1b4a3d32d45efe19f"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:43+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:43+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "VaultBeacon Sentinel",
+      "track": "Lido Vault Position Monitor + Alert Agent",
+      "plan_id": "0xabc0a144538821da775d58358d85062178997549050650a62ef7e33e34214a79",
+      "simulation_hash": "0xb03305bbd2304abbd96d17ef6b4d1836d855c28d9e4306b1b4a3d32d45efe19f",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_vault_monitor_vault_alert.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/filecoin/0xabc0a144538821da775d58358d85062178997549050650a62ef7e33e34214a79.json"
+      ],
+      "partner_statuses": {
+        "Lido Vault Monitor": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "OpenServ": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:50:43+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "vault_state",
+          "description": "Current allocations, balances, and thresholds.",
+          "score": 95
+        },
+        {
+          "name": "benchmarks",
+          "description": "External yield references and comparison snapshots.",
+          "score": 90
+        },
+        {
+          "name": "alert_policy",
+          "description": "Severity thresholds, recipients, and cooldown rules.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Alert digests and submission notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x4c344fccc842aa8f23da019beaad2f5cc9b81d040bf7808e009a69798917767f",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x8e5bdaf7d138a5c1ce6f2624c749e95715f4ab6df84f4d3acdaa8e44f824194c"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "VaultBeacon Sentinel",
+      "track": "Lido Vault Position Monitor + Alert Agent",
+      "plan_id": "0x4c344fccc842aa8f23da019beaad2f5cc9b81d040bf7808e009a69798917767f",
+      "simulation_hash": "0x8e5bdaf7d138a5c1ce6f2624c749e95715f4ab6df84f4d3acdaa8e44f824194c",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_vault_monitor_vault_alert.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/filecoin/0x4c344fccc842aa8f23da019beaad2f5cc9b81d040bf7808e009a69798917767f.json"
+      ],
+      "partner_statuses": {
+        "Lido Vault Monitor": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "OpenServ": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:51:48+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:13+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "vault_state",
+          "description": "Current allocations, balances, and thresholds.",
+          "score": 95
+        },
+        {
+          "name": "benchmarks",
+          "description": "External yield references and comparison snapshots.",
+          "score": 90
+        },
+        {
+          "name": "alert_policy",
+          "description": "Severity thresholds, recipients, and cooldown rules.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Alert digests and submission notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:13+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x279e5946ecc0c673a483cdc1b222c4561d46b32c9706c1ca3a33f14d108613aa",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:13+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x40815574f0adc7672759de7fd99fe926d36d1fd8635198bee9c039a37b4d24c8"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:13+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "OPENSERV_AGENT_URL",
+        "OPENSERV_API_KEY",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:13+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "VaultBeacon Sentinel",
+      "track": "Lido Vault Position Monitor + Alert Agent",
+      "plan_id": "0x279e5946ecc0c673a483cdc1b222c4561d46b32c9706c1ca3a33f14d108613aa",
+      "simulation_hash": "0x40815574f0adc7672759de7fd99fe926d36d1fd8635198bee9c039a37b4d24c8",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_vault_monitor_vault_alert.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/filecoin/0x279e5946ecc0c673a483cdc1b222c4561d46b32c9706c1ca3a33f14d108613aa.json"
+      ],
+      "partner_statuses": {
+        "Lido Vault Monitor": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "OpenServ": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:52:13+00:00"
+    }
   }
 ]
