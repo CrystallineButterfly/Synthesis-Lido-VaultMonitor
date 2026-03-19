@@ -5,7 +5,7 @@
 - **Category:** monitoring
 - **Primary contract:** `VaultAlertRegistry`
 - **Primary module:** `vault_monitor`
-- **Submission status:** implementation ready, waiting for credentials and TxIDs.
+- **Submission status:** audited and offline-demo ready; optional live partner credentials unlock network execution.
 
 ## What this repo does
 
@@ -67,6 +67,31 @@ flowchart TD
 3. Persist a dry-run artifact before any live execution.
 4. Enforce onchain policy through the guarded contract wrapper.
 5. Verify outputs, update receipts, and render submission material.
+
+## Current readiness
+
+- **Latest verification:** `verified` at `2026-03-19T03:52:13+00:00`
+- **Execution mode:** `offline_prepared`
+- **Offline-prepared partners:** Lido Vault Monitor (prepared_contract_call), ENS (prepared_contract_call), Filecoin (prepared_filecoin_bundle)
+- **Live credential blockers:** Venice, Bankr Gateway, OpenServ
+- **Audit docs:** `docs/audit.md`, `docs/live_readiness.md`
+
+## Most sensitive actions
+
+- `venice_private_analysis` (Venice, high)
+- `bankr_gateway_compute_route` (Bankr Gateway, high)
+
+## Live blocker details
+
+- **Venice** — VENICE_API_KEY, VENICE_CHAT_COMPLETIONS_URL, VENICE_MODEL — https://docs.venice.ai/
+- **Bankr Gateway** — BANKR_API_KEY, BANKR_CHAT_COMPLETIONS_URL, BANKR_MODEL — https://bankr.bot/
+- **OpenServ** — OPENSERV_API_KEY, OPENSERV_AGENT_URL — https://docs.openserv.ai/
+
+## Latest evidence artifacts
+
+- `artifacts/onchain_intents/lido_vault_monitor_vault_alert.json`
+- `artifacts/onchain_intents/ens_ens_publish.json`
+- `artifacts/filecoin/0x279e5946ecc0c673a483cdc1b222c4561d46b32c9706c1ca3a33f14d108613aa.json`
 
 ## Security controls
 

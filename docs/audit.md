@@ -43,6 +43,14 @@ when live network credentials are absent. Network-only partners still report mis
 `cast send` output is now parsed for `transactionHash` explicitly before falling back to the
 raw stdout payload.
 
+## Track-specific trust boundaries
+
+- primary wrapper contract: `VaultAlertRegistry`
+- live-only partners: Venice, Bankr Gateway, OpenServ
+- offline-prepared partners: Lido Vault Monitor (prepared_contract_call), ENS (prepared_contract_call), Filecoin (prepared_filecoin_bundle)
+- highest-sensitivity actions: venice_private_analysis, bankr_gateway_compute_route
+- latest verification artifact: `artifacts/verification/0x279e5946ecc0c673a483cdc1b222c4561d46b32c9706c1ca3a33f14d108613aa.json`
+
 ## Current posture
 
 ### Good
